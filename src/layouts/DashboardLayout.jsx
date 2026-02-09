@@ -6,7 +6,7 @@ import Sidebar from '../components/Sidebar';
 
 const DashboardLayout = () => {
   return (
-    // Contenedor principal
+    
     <div className="flex h-screen bg-gray-50 font-sans">
       
     
