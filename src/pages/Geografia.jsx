@@ -17,7 +17,7 @@ const Geografia = () => {
   return (
     <div className="p-6 min-h-screen bg-gray-50 font-sans">
       
-      {/* 1. CABECERA (Limpia y consistente con el Dashboard) */}
+      {/* a */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <div>
             <h1 className="text-2xl font-black text-gray-900 tracking-tight flex items-center gap-2">

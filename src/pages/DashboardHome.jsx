@@ -2,7 +2,7 @@ import React from 'react';
 import { Users, FileText, AlertCircle, CheckCircle2, TrendingUp, Clock } from 'lucide-react';
 
 const DashboardHome = () => {
-  // Recuperamos el rol
+  
   const user = JSON.parse(localStorage.getItem('usuario')) || { rol: 'Invitado' };
 
   return (

@@ -9,8 +9,7 @@ import Login from './pages/Login';
 import DashboardHome from './pages/DashboardHome';
 import Transcripcion from './pages/Transcripcion';
 import GestionUsuarios from './pages/GestionUsuarios';
-import Geografia from './pages/Geografia'; // <--- 1. AQUÍ IMPORTAMOS EL ARCHIVO NUEVO
-
+import Geografia from './pages/Geografia'; 
 // Componente temporal para Resultados
 const ResultadosPublicos = () => (
   <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
@@ -41,8 +40,8 @@ function App() {
           
           
           
-          <Route path="partidos" element={<div className="p-10">🚧 Página de Partidos en Construcción</div>} />
-          <Route path="supervision" element={<div className="p-10">🚧 Página de Supervisión en Construcción</div>} />
+          <Route path="partidos" element={<div className="p-10"> Página de Partidos </div>} />
+          <Route path="supervision" element={<div className="p-10"> Página de Supervisión</div>} />
 
         </Route>
 

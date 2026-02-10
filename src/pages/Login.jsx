@@ -2,17 +2,14 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, ChevronDown, BarChart3, User, LockKeyhole } from 'lucide-react';
 
-// ✅ Ajusta esta ruta si tu estructura es diferente:
-// - si Login.jsx está en src/pages/Login.jsx -> "../api/auth"
-// - si está en src/components/Login.jsx -> "../api/auth"
-// - si está más profundo -> "../../api/auth"
+
 import { login, me, permissions } from '../api/auth';
 
 const Login = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
-  // ✅ Nuevos estados (no cambian el diseño)
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -22,7 +19,7 @@ const Login = () => {
     rol: 'Administrador',
   });
 
-  // ✅ Cambiado: ahora hace login real contra Laravel (Sanctum)
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
@@ -36,7 +33,7 @@ const Login = () => {
       const user = await me();
       const perms = await permissions();
 
-      // 3) guarda en localStorage (si ya usabas esto, no rompe tu flujo)
+      // 3) guarda en localStorage 
       localStorage.setItem('usuario', JSON.stringify(user));
       localStorage.setItem('permisos', JSON.stringify(perms));
 
@@ -121,7 +118,7 @@ const Login = () => {
               </div>
             </div>
 
-            {/* SELECTOR DE ROLES (se mantiene diseño; ya no define permisos reales) */}
+            {/* SELECTOR DE ROLES */}
             <div>
               <label className={labelClasses}>Rol de Acceso</label>
               <div className="relative">
@@ -140,7 +137,7 @@ const Login = () => {
               </div>
             </div>
 
-            {/* ✅ Error sin cambiar diseño */}
+            { }
             {error && (
               <div className="bg-black/20 border border-white/20 text-white text-xs p-3 rounded-xl">
                 {error}
@@ -152,9 +149,8 @@ const Login = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full bg-white text-[#E31E24] font-black py-3.5 rounded-xl hover:bg-yellow-50 transition-all shadow-lg hover:shadow-xl uppercase tracking-widest text-xs transform hover:-translate-y-0.5 ${
-                  loading ? 'opacity-70 cursor-not-allowed' : ''
-                }`}
+                className={`w-full bg-white text-[#E31E24] font-black py-3.5 rounded-xl hover:bg-yellow-50 transition-all shadow-lg hover:shadow-xl uppercase tracking-widest text-xs transform hover:-translate-y-0.5 ${loading ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
               >
                 {loading ? 'Ingresando...' : 'Iniciar Sesión'}
               </button>
@@ -190,4 +186,4 @@ const Login = () => {
   );
 };
 
-export default Login; 
+export default Login;
